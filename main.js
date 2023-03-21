@@ -8,15 +8,20 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 640,
+    height: 550,
     webPreferences: {
       nodeIntegration: true
     }
   })
+  //remove menu
+  mainWindow.setMenu(null);
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
+
+  // Set Window no Resizable
+  mainWindow.setResizable(false);
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

@@ -2,15 +2,25 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Delay Calculator</title>
+     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-
+    <div id="titulo">
+      <h1>Delay Calculator</h1>
+    </div>
+    <div id="source">
+      <p id="bpm_text">BPM</p>
+      <input id="bpm_input" type="number" autofocus/>
+    </div>
+    <div id="div_results">
+      <!-- the results will be show here -->
+      <ul id="results">
+      </ul>
+    </div>
+    <div>
+      <p id="foot">1.000 miliseconds (ms) = 1 second</p>
+    </div>
     <script>
       // You can also require other files to run in this process
       require('./renderer.js')
