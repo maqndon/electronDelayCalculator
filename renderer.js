@@ -51,7 +51,7 @@ function addElements(a,i,s) {
     var m="nott"+a;
 
     document.getElementById(m).appendChild(div);
-// <label for="tabreiter-0-0">Lorem Ipsum</label>
+
     for (var name in type){
 
       var input = document.createElement("input");
@@ -61,7 +61,7 @@ function addElements(a,i,s) {
       var text = document.createTextNode(t);
 
       input.name = name;
-      input.className = 'resultado';
+      input.className = 'result';
       input.disabled = true;
 
       para.appendChild(text);
@@ -79,17 +79,17 @@ addElements(27,27,"3 Bar Added");
 
 function addValues(a,b) {
 
-  let entrada = document.querySelector('#bpm_input');
-  var resultados = document.getElementsByClassName( 'resultado' );
+  let input = document.querySelector('#bpm_input');
+  var results = document.getElementsByClassName( 'result' );
 
-  for ( var i = 0; i < resultados.length/4; i++ ) {
+  for ( var i = 0; i < results.length/4; i++ ) {
 
     (function(lockedInIndex){
-      entrada.addEventListener('input', function(e){
+      input.addEventListener('input', function(e){
         var locked=lockedInIndex+a;
         bpm=e.srcElement.value;
         var ms=minute/bpm;
-        switch (resultados[locked].name){
+        switch (results[locked].name){
           case "notes":
             var noteValue=1;
             var noteVal = lockedInIndex/3;
@@ -98,9 +98,9 @@ function addValues(a,b) {
             var final=ms*nota*noteValue*barAdd;
             var result = (final - Math.floor(final)) !== 0;
               if (result)
-                resultados[locked].value = parseFloat(final).toFixed(2);
+                results[locked].value = parseFloat(final).toFixed(2);
               else
-                resultados[locked].value = final;
+                results[locked].value = final;
             break;
           case "triplets":
             var noteValue=0.667;
@@ -110,9 +110,9 @@ function addValues(a,b) {
             var final=ms*nota*noteValue*barAdd;
             var result = (final - Math.floor(final)) !== 0;
               if (result)
-                resultados[locked].value = parseFloat(final).toFixed(2);
+                results[locked].value = parseFloat(final).toFixed(2);
               else
-                resultados[locked].value = final;
+                results[locked].value = final;
             break;
           case "dotted":
             var noteValue=1.5;
@@ -122,9 +122,9 @@ function addValues(a,b) {
             var final = ms*nota*noteValue*barAdd;
             var result = (final - Math.floor(final)) !== 0;
               if (result)
-                resultados[locked].value = parseFloat(final).toFixed(2);
+                results[locked].value = parseFloat(final).toFixed(2);
               else
-                resultados[locked].value = final;
+                results[locked].value = final;
             break;
         }
       },'false');
