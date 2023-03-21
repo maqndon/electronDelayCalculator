@@ -71,7 +71,7 @@ function addElements(a,i,s) {
   }
 }
 
-//nombre
+//name
 addElements(0,0,"Normal");
 addElements(9,9,"1 Bar Added");
 addElements(18,18,"2 Bar Added");
